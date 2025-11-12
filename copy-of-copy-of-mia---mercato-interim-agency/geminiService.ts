@@ -1,0 +1,1 @@
+const VITE_GEMINI_API_KEY = "AIzaSyCrkk4mo3Ixc--RpaGQnDwZe957e2dK4Y";
