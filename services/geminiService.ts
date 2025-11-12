@@ -1,4 +1,4 @@
-
+const VITE_GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 import { GoogleGenAI, GenerateContentResponse, Type } from "@google/genai";
 import { PerformanceData } from '../types';
