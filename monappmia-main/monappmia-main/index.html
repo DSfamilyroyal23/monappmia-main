@@ -6,7 +6,7 @@
     <title>MIA | Mercato Interim Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
     <meta name="theme-color" content="#ffffff">
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -185,5 +185,7 @@
 </head>
 <body class="bg-background text-foreground font-sans antialiased">
     <div id="root"></div>
+    <!-- Use relative paths so the app works when deployed to a sub-path -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
