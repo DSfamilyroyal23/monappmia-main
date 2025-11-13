@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA | Mercato Interim Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('mia-theme') === 'dark' || (!('mia-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        card: 'hsl(var(--card))',
+                        'card-foreground': 'hsl(var(--card-foreground))',
+                        popover: 'hsl(var(--popover))',
+                        'popover-foreground': 'hsl(var(--popover-foreground))',
+                        primary: 'hsl(var(--primary))',
+                        'primary-foreground': 'hsl(var(--primary-foreground))',
+                        secondary: 'hsl(var(--secondary))',
+                        'secondary-foreground': 'hsl(var(--secondary-foreground))',
+                        muted: 'hsl(var(--muted))',
+                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        accent: 'hsl(var(--accent))',
+                        'accent-foreground': 'hsl(var(--accent-foreground))',
+                        destructive: 'hsl(var(--destructive))',
+                        'destructive-foreground': 'hsl(var(--destructive-foreground))',
+                        success: 'hsl(var(--success))',
+                        warning: 'hsl(var(--warning))',
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                    },
+                    borderRadius: {
+                        'DEFAULT': '1rem',
+                        'xl': '1rem',
+                        '2xl': '1.25rem',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, hsl(var(--primary)), hsl(270 95% 75%))',
+                        'gradient-secondary': 'linear-gradient(135deg, hsl(var(--secondary)), hsl(215 20% 40%))',
+                        'gradient-accent': 'linear-gradient(135deg, hsl(var(--accent)), hsl(210 95% 65%))',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 30px hsl(var(--primary) / 0.25)',
+                        'glow-accent': '0 0 30px hsl(var(--accent) / 0.25)',
+                        'glow-primary': '0 6px 20px hsl(var(--primary) / 0.2)',
+                        'card': '0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07)',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-in': 'slideIn 0.3s ease-out',
+                        'spin': 'spin 1s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --background: 210 20% 98%;
+                --foreground: 215 28% 17%;
+                --card: 0 0% 100%;
+                --card-foreground: 215 28% 17%;
+                --popover: 0 0% 100%;
+                --popover-foreground: 215 28% 17%;
+                --primary: 260 85% 60%;
+                --primary-foreground: 210 20% 98%;
+                --secondary: 210 20% 94%;
+                --secondary-foreground: 215 25% 27%;
+                --muted: 210 20% 94%;
+                --muted-foreground: 215 20% 45%;
+                --accent: 200 95% 55%;
+                --accent-foreground: 210 20% 98%;
+                --destructive: 0 84% 60%;
+                --destructive-foreground: 210 20% 98%;
+                --success: 142 70% 45%;
+                --warning: 48 95% 60%;
+                --border: 215 20% 90%;
+                --input: 215 20% 90%;
+                --ring: 260 85% 60%;
+            }
+
+            .dark {
+                --background: 215 28% 17%;
+                --foreground: 210 20% 98%;
+                --card: 215 25% 22%;
+                --card-foreground: 210 20% 98%;
+                --popover: 215 25% 22%;
+                --popover-foreground: 210 20% 98%;
+                --primary: 260 90% 70%;
+                --primary-foreground: 260 85% 15%;
+                --secondary: 215 20% 30%;
+                --secondary-foreground: 210 20% 98%;
+                --muted: 215 20% 30%;
+                --muted-foreground: 217 10% 65%;
+                --accent: 200 95% 60%;
+                --accent-foreground: 200 100% 10%;
+                --destructive: 0 84% 60%;
+                --destructive-foreground: 0 0% 100%;
+                --success: 142 70% 50%;
+                --warning: 48 95% 60%;
+                --border: 215 20% 28%;
+                --input: 215 20% 28%;
+                --ring: 260 90% 70%;
+            }
+        }
+        @layer utilities {
+            .dark .glass-card {
+                background: hsl(215 25% 22% / 0.7);
+                backdrop-filter: blur(12px);
+                border: 1px solid hsl(215 20% 28% / 0.8);
+            }
+            .glass-card {
+                background: hsl(0 0% 100% / 0.7);
+                backdrop-filter: blur(12px);
+                border: 1px solid hsl(215 20% 90% / 0.8);
+            }
+            
+            .glow-text {
+                text-shadow: 0 0 20px currentColor;
+            }
+            
+            .gradient-text {
+                background: linear-gradient(135deg, hsl(var(--primary)), hsl(270 95% 75%));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            
+            .sidebar-glow::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.4), transparent);
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1"
+  }
+}
+</script>
+</head>
+<body class="bg-background text-foreground font-sans antialiased">
+    <div id="root"></div>
+</body>
+</html>

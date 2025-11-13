@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-axVn2-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV de [Prénom NOM]</title>
+    <style>
+        :root {
+            --main-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-gray: #ecf0f1;
+            --dark-text: #34495e;
+            --light-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: var(--dark-text);
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 30px auto;
+            background: var(--light-text);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+
+        .sidebar {
+            background-color: var(--main-color);
+            color: var(--light-text);
+            padding: 30px;
+            width: 35%;
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            padding: 30px;
+            width: 65%;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 0;
+            color: var(--main-color);
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0 0;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: var(--main-color);
+            border-bottom: 2px solid var(--main-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .job, .education-item {
+            margin-bottom: 20px;
+        }
+
+        .job h3, .education-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: var(--secondary-color);
+        }
+
+        .job .date, .education-item .date {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .job ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .contact-info a {
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .skills-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-level {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ================================= -->
+        <!--         COLONNE DE GAUCHE         -->
+        <!-- ================================= -->
+        <aside class="sidebar">
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <ul>
+                    <li><strong>Tél:</strong> [Votre numéro]</li>
+                    <li><strong>Email:</strong> <a href="mailto:[Votre-email]">[Votre-email]</a></li>
+                    <li><strong>Adresse:</strong> [Votre ville, CP]</li>
+                    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/[Votre-profil]">linkedin.com/in/[profil]</a></li>
+                </ul>
+            </div>
+
+            <div class="skills">
+                <h2>Compétences</h2>
+                <ul class="skills-list">
+                    <!-- Modifiez vos compétences ici -->
+                    <li><span>Microsoft Office</span> <span class="skill-level">Expert</span></li>
+                    <li><span>Gestion de projet</span> <span class="skill-level">Avancé</span></li>
+                    <li><span>Analyse de données</span> <span class="skill-level">Intermédiaire</span></li>
+                    <li><span>[Autre compétence]</span> <span class="skill-level">[Niveau]</span></li>
+                </ul>
+            </div>
+
+            <div class="languages">
+                <h2>Langues</h2>
+                <ul class="skills-list">
+                     <!-- Modifiez vos langues ici -->
+                    <li><span>Français</span> <span class="skill-level">Maternelle</span></li>
+                    <li><span>Anglais</span> <span class="skill-level">Bilingue</span></li>
+                    <li><span>Espagnol</span> <span class="skill-level">Débutant</span></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- ================================= -->
+        <!--         CONTENU PRINCIPAL         -->
+        <!-- ================================= -->
+        <main class="main-content">
+            <header>
+                <h1>[Prénom NOM]</h1>
+                <p>[Titre du poste actuel ou recherché]</p>
+            </header>
+
+            <section class="section profile">
+                <h2>Profil Professionnel</h2>
+                <p>
+                    <!-- Rédigez ici un paragraphe de 3-4 lignes qui vous décrit professionnellement -->
+                    Professionnelle dynamique et orientée résultats avec plus de [X] années d'expérience en [Votre domaine]. Reconnue pour [Votre compétence clé 1] et [Votre compétence clé 2]. À la recherche d'une opportunité pour mettre à profit mes compétences en [Compétence à mettre en avant] au sein d'une entreprise innovante.
+                </p>
+            </section>
+
+            <section class="section experience">
+                <h2>Expérience Professionnelle</h2>
+                <!-- Remplacer par votre expérience -->
+                <div class="job">
+                    <h3>[Titre de votre poste]</h3>
+                    <p><strong>[Nom de l'entreprise]</strong> | [Ville]</p>
+                    <p class="date">De [Mois, Année] à Aujourd'hui</p>
+                    <ul>
+                        <li>Réalisation clé 1 : Augmentation du chiffre d'affaires de 15% en 2023 grâce à...</li>
+                        <li>Responsabilité 2 : Gestion d'une équipe de [X] personnes et coordination de...</li>
+                        <li>Responsabilité 3 : Optimisation des processus internes qui a permis de réduire les coûts de...</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>[Titre de votre ancien poste]</h3>
+                    <p><strong>[Ancienne entreprise]</strong> | [Ville]</p>
+                    <p class="date">De [Mois, Année] à [Mois, Année]</p>
+                    <ul>
+                        <li>Description de vos missions et réussites.</li>
+                        <li>Autre point marquant de votre expérience.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section education">
+                <h2>Formation</h2>
+                 <!-- Remplacer par votre formation -->
+                <div class="education-item">
+                    <h3>[Nom de votre diplôme]</h3>
+                    <p><strong>[Nom de l'université ou école]</strong> | [Ville]</p>
+                    <p class="date">Obtenu en [Année]</p>
+                </div>
+                 <div class="education-item">
+                    <h3>[Autre diplôme ou certification]</h3>
+                    <p><strong>[Nom de l'organisme]</strong> | [Ville]</p>
+                    <p class="date">Obtenu en [Année]</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

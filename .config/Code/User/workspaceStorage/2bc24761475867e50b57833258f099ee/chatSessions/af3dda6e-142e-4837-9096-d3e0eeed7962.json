@@ -1,0 +1,140 @@
+{
+  "version": 3,
+  "requesterUsername": "",
+  "responderUsername": "",
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_a04d563b-8add-4485-86b5-ea3ed5b70815",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 125
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 126
+            },
+            "text": "corrige l'erreur pourquoi mon application ne s'affiche pas quand   je le déploie alors que sur google ai studio ça s'affiche ",
+            "kind": "text"
+          }
+        ],
+        "text": "corrige l'erreur pourquoi mon application ne s'affiche pas quand   je le déploie alors que sur google ai studio ça s'affiche "
+      },
+      "variableData": {
+        "variables": [
+          {
+            "kind": "file",
+            "id": "vscode.implicit.file",
+            "name": "file:index.html",
+            "value": {
+              "$mid": 1,
+              "fsPath": "/home/dsfamilyroyal/monappmia-main/monappmia-main/index.html",
+              "external": "file:///home/dsfamilyroyal/monappmia-main/monappmia-main/index.html",
+              "path": "/home/dsfamilyroyal/monappmia-main/monappmia-main/index.html",
+              "scheme": "file"
+            },
+            "modelDescription": "User's active file"
+          }
+        ]
+      },
+      "response": [
+        {
+          "kind": "mcpServersInteractionRequired",
+          "servers": [
+            {
+              "serverId": "mcp.config.usrlocal.chromedevtools/chrome-devtools-mcp",
+              "serverLabel": "chromedevtools/chrome-devtools-mcp",
+              "errorMessage": "User interaction required: variables"
+            }
+          ],
+          "startCommand": {
+            "id": "mcp.startServersWithInteraction",
+            "title": "Démarrer les serveurs MCP",
+            "arguments": []
+          }
+        },
+        {
+          "kind": "progressMessage",
+          "content": {
+            "value": "Connexion à GitHub...",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          }
+        },
+        {
+          "kind": "progressMessage",
+          "content": {
+            "value": "Préparation de la conversation...",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          }
+        },
+        {
+          "kind": "progressMessage",
+          "content": {
+            "value": "La conversation est bientôt prête...",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          }
+        },
+        {
+          "kind": "warning",
+          "content": {
+            "value": "La conversation a mis trop de temps à se préparer. Vérifiez que vous êtes connecté à GitHub et que l’extension « GitHub.copilot-chat » est installée et activée.",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          }
+        }
+      ],
+      "responseId": "response_59ba79da-91ad-42ae-a448-51aaa930932a",
+      "result": {},
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "id": "setup.chat",
+        "name": "GitHub Copilot",
+        "isDefault": true,
+        "isCore": true,
+        "modes": [
+          "ask"
+        ],
+        "slashCommands": [],
+        "disambiguation": [],
+        "locations": [
+          "panel"
+        ],
+        "metadata": {
+          "helpTextPrefix": {
+            "value": "Vous devez configurer GitHub Copilot et être connecté pour utiliser la conversation.",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false
+          }
+        },
+        "description": "Posez une question.",
+        "extensionId": {
+          "value": "nullExtensionDescription",
+          "_lower": "nullextensiondescription"
+        },
+        "extensionDisplayName": "Null Extension Description",
+        "extensionPublisherId": "vscode"
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1763031913228
+    }
+  ],
+  "sessionId": "af3dda6e-142e-4837-9096-d3e0eeed7962",
+  "creationDate": 1763027509413,
+  "isImported": false,
+  "lastMessageDate": 1763031913232
+}

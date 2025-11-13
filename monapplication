@@ -1,0 +1,130 @@
+    623             btn.disabled = true;                                                                     │
+ │    624             new Notification('DS FOOTBALL ROYAL', { body: 'Notifications activées !' });             │
+ │    625         }                                                                                            │
+ │    626     });                                                                                              │
+ │    627 }                                                                                                    │
+ │    628                                                                                                      │
+ │    629 function showTrainingNotification(training) {                                                        │
+ │    630     if (notificationPermission !== 'granted') return;                                                │
+ │    631     const notificationBody = `C'est l'heure de votre session : ${training.title}`;                   │
+ │    632     new Notification('DS FOOTBALL ROYAL - Rappel', {                                                 │
+ │    633         body: notificationBody,                                                                      │
+ │    634         icon: 'images/icon-192.png'                                                                  │
+ │    635     });                                                                                              │
+ │    636 }                                                                                                    │
+ │    637                                                                                                      │
+ │    638 function startNotificationEngine() {                                                                 │
+ │    639     setInterval(() => {                                                                              │
+ │    640         const now = new Date();                                                                      │
+ │    641         const currentDay = now.getDay();                                                             │
+ │    642         const currentTime = `${String(now.getHours()).padStart(2,                                    │
+ │        '0')}:${String(now.getMinutes()).padStart(2, '0')}`;                                                 │
+ │    643         const scheduledEvent = weeklySchedule[currentDay];                                           │
+ │    644         if (scheduledEvent && scheduledEvent.time === currentTime) {                                 │
+ │    645             showTrainingNotification(scheduledEvent);                                                │
+ │    646         }                                                                                            │
+ │    647     }, 60000); // Check every minute                                                                 │
+ │    648 }                                                                                                    │
+ │    649                                                                                                      │
+ │    650 // --- MAIN APP LOGIC ---                                                                            │
+ │    651 document.addEventListener('DOMContentLoaded', () => {                                                │
+ │    652     const pages = document.querySelectorAll('.page');                                                │
+ │    653     const navLinks = document.querySelectorAll('.nav-link');                                         │
+ │    654                                                                                                      │
+ │    655     function showPage(pageId) {                                                                      │
+ │    656         pages.forEach(p => p.style.display = 'none');                                                │
+ │    657         const container = document.getElementById(pageId);                                           │
+ │    658         if(container) {                                                                              │
+ │    659             container.style.display = 'block';                                                       │
+ │    660             switch (pageId) {                                                                        │
+ │    661                 case 'dashboard': renderDashboardPage(container); break;                             │
+ │    662                 case 'trainings': renderTrainingsPage(container); break;                             │
+ │    663                 case 'matches': renderMatchesPage(container); break;                                 │
+ │    664                 case 'calendar': renderCalendarPage(container); break;                               │
+ │    665                 case 'nutrition': renderNutritionPage(container); break;                             │
+ │    666                 case 'video': renderVideoAnalysisPage(container); break;                             │
+ │    667                 case 'image': renderImageGenerationPage(container); break;                           │
+ │    668                 case 'settings': renderSettingsPage(container); break;                               │
+ │    669             }                                                                                        │
+ │    670         }                                                                                            │
+ │    671                                                                                                      │
+ │    672         navLinks.forEach(l => {                                                                      │
+ │    673             l.classList.remove('active');                                                            │
+ │    674             if (l.dataset.page === pageId) {                                                         │
+ │    675                 l.classList.add('active');                                                           │
+ │    676             }                                                                                        │
+ │    677         });                                                                                          │
+ │    678     }                                                                                                │
+ │    679                                                                                                      │
+ │    680     navLinks.forEach(link => {                                                                       │
+ │    681         link.addEventListener('click', (e) => {                                                      │
+ │    682             e.preventDefault();                                                                      │
+ │    683             showPage(link.dataset.page);                                                             │
+ │    684         });                                                                                          │
+ │    685     });                                                                                              │
+ │    686                                                                                                      │
+ │    687     const addTrainingForm = document.getElementById('add-training-form');                            │
+ │    688     if(addTrainingForm) {                                                                            │
+ │    689         addTrainingForm.addEventListener('submit', (e) => {                                          │
+ │    690             e.preventDefault();                                                                      │
+ │    691             const title = document.getElementById('training-title').value;                           │
+ │    692             const description = document.getElementById('training-desc').value;                      │
+ │    693             if(title && description) {                                                               │
+ │    694                 const trainings = getFromStorage('customTrainings');                                 │
+ │    695                 trainings.push({ title, description });                                              │
+ │    696                 saveToStorage('customTrainings', trainings);                                         │
+ │    697                 renderCustomTrainings();                                                             │
+ │    698                 const modalEl = document.getElementById('addTrainingModal');                         │
+ │    699                 const modal = bootstrap.Modal.getInstance(modalEl);                                  │
+ │    700                 modal.hide();                                                                        │
+ │    701                 addTrainingForm.reset();                                                             │
+ │    702             }                                                                                        │
+ │    703         });                                                                                          │
+ │    704     }                                                                                                │
+ │    705                                                                                                      │
+ │    706     const addMatchForm = document.getElementById('add-match-form');                                  │
+ │    707     if(addMatchForm) {                                                                               │
+ │    708         addMatchForm.addEventListener('submit', (e) => {                                             │
+ │    709             e.preventDefault();                                                                      │
+ │    710             const opponent = document.getElementById('match-opponent').value;                        │
+ │    711             const date = document.getElementById('match-date').value;                                │
+ │    712             const score = document.getElementById('match-score').value;                              │
+ │    713             const location = document.getElementById('match-location').value;                        │
+ │    714             if(opponent && date && score && location) {                                              │
+ │    715                 const matches = getFromStorage('matches');                                           │
+ │    716                 matches.push({ opponent, date, score, location });                                   │
+ │    717                 saveToStorage('matches', matches);                                                   │
+ │    718                 renderMatchesPage(document.getElementById('matches'));                               │
+ │    719                 const modalEl = document.getElementById('addMatchModal');                            │
+ │    720                 const modal = bootstrap.Modal.getInstance(modalEl);                                  │
+ │    721                 modal.hide();                                                                        │
+ │    722                 addMatchForm.reset();                                                                │
+ │    723             }                                                                                        │
+ │    724         });                                                                                          │
+ │    725     }                                                                                                │
+ │    726                                                                                                      │
+ │    727     // Initial page load                                                                             │
+ │    728     showPage('dashboard');                                                                           │
+ │    729     startNotificationEngine();                                                                       │
+ │    730 });                                                                                                  │
+ │    731                                                                                                      │
+ │    732 function deleteTraining(index) {                                                                     │
+ │    733     if (confirm('Êtes-vous sûr de vouloir supprimer cet entraînement ?')) {                          │
+ │    734         const trainings = getFromStorage('customTrainings');                                         │
+ │    735         trainings.splice(index, 1);                                                                  │
+ │    736         saveToStorage('customTrainings', trainings);                                                 │
+ │    737         renderTrainingsPage(document.getElementById('trainings'));                                   │
+ │    738     }                                                                                                │
+ │    739 }                                                                                                    │
+ │    740                                                                                                      │
+ │    741 function deleteMatch(index) {                                                                        │
+ │    742     if (confirm('Êtes-vous sûr de vouloir supprimer ce match ?')) {                                  │
+ │    743         const matches = getFromStorage('matches');                                                   │
+ │    744         matches.splice(index, 1);                                                                    │
+ │    745         saveToStorage('matches', matches);                                                           │
+ │    746         renderMatchesPage(document.getElementById('matches'));                                       │
+ │    747     }                                                                                                │
+ │    748 }                                                                                                    │
+ │    749     </script>                                                                                        │
+ │    750 </body>                                                                                              │
+ │    751 </html>                   réécrit ce code de mon application mais ne change rien 
